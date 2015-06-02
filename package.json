@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git.example.com/repository"
+    "url": "https://github.com/appdevdesigns/passport-cas.git"
   },
   "keywords": [
     "CAS",

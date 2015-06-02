@@ -1,5 +1,5 @@
-# passport-cas
-CAS strategy for Passport.js authentication
+# passport-cas2
+CAS 2.0 strategy for Passport.js authentication
 
 [Passport](http://passportjs.org/) strategy for authenticating with the 
 [CAS](https://wiki.jasig.org/display/CAS/Home) single sign-on service.
@@ -11,7 +11,7 @@ Suitable for any application or framework that supports
 
 ## Install
 
-    $ npm install passport-cas
+    $ npm install passport-cas2
     
 ## Usage
 
@@ -75,7 +75,7 @@ gets to the `verify` callback.
     }, 
     function(username, profile, done) {
       User.findOrCreate({ id: profile.id }, function(err, user) {
-        user.name = profile.name.givenName + ' ' + profile.name.surname;
+        user.name = profile.name.givenName + ' ' + profile.name.familyName;
         done(err, user);
       });
     });
@@ -127,7 +127,7 @@ The 3rd party services you request may need to add this URL as a trusted proxy
 as well.
 
 ```javascript
-    var PgtServer = require('passport-cas').PgtServer;
+    var PgtServer = require('passport-cas2').PgtServer;
     PgtServer(
         'https://signin.example.com/cas',
         'https://myserver.example.com:1337',

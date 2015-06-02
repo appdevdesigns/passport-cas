@@ -1,7 +1,7 @@
 {
-  "name": "passport-cas",
+  "name": "passport-cas2",
   "version": "0.0.1",
-  "description": "CAS strategy for Passport.js authentication",
+  "description": "CAS 2.0 strategy for Passport.js authentication",
   "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

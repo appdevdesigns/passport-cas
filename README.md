@@ -22,6 +22,7 @@ they have an account. The strategy requires a `verify` callback, which
 accepts a validated username (and possibly also a user profile) and calls `done`
 providing a user object.
 
+```javascript
     passport.use(new CasStrategy({
       casURL: 'https://signin.example.com/cas'
     }, 
@@ -31,6 +32,7 @@ providing a user object.
         done(err, user);
       });
     });
+```
 
 #### Authenticate Requests
 
@@ -40,12 +42,14 @@ authenticate requests.
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
+```javascript
     app.get('/auth/cas',
       passport.authenticate('cas', { failureRedirect: '/login' }),
       function(req, res) {
         // Successful authentication, redirect home.
         res.redirect('/');
       });
+```
 
 #### Profile Fields
 
@@ -59,6 +63,7 @@ format. Alternatively, you can specify a `propertyMap` object during
 initialization, to have the profile more or less sorted out by the time it
 gets to the `verify` callback.
 
+```javascript
     passport.use(new CasStrategy({
       casURL: 'https://signin.example.com/cas',
       propertyMap: { 
@@ -74,6 +79,7 @@ gets to the `verify` callback.
         done(err, user);
       });
     });
+```
 
 #### CAS Logout
 
@@ -87,6 +93,7 @@ To log the user out of the CAS server, use the `logout` function from this
 module instead. It will redirect the user to the CAS server, and they will 
 return to your specified URL in a logged out state.
 
+```javascript
     var cas = new CasStrategy({
       casURL: 'https://signin.example.com/cas'
     }, 
@@ -101,6 +108,7 @@ return to your specified URL in a logged out state.
       var returnURL = 'http://example.com/';
       cas.logout(req, res, returnURL);
     });
+```
 
 ## Proxy Authorization
 
@@ -118,6 +126,7 @@ that it must use HTTPS and be accessible by the CAS server over the network.
 The 3rd party services you request may need to add this URL as a trusted proxy
 as well.
 
+```javascript
     var PgtServer = require('passport-cas').PgtServer;
     PgtServer(
         'https://signin.example.com/cas',
@@ -125,9 +134,11 @@ as well.
         mySSLCertificate,
         mySSLKey
     );
+```
     
 #### Configuring the Application
 
+```javascript
     var cas = new CasStrategy({
       casURL: 'https://signin.example.com/cas',
       pgtURL: 'https://myserver.example.com:1337'
@@ -138,13 +149,15 @@ as well.
       });
     });
     passport.use(cas);
+```
 
 #### Obtaining Authorization
 
 First, you get a CAS proxy ticket for the user. Then you append that ticket to
 the service's URL query string. The service should then behave as if the user 
-has logged to it directly via CAS.
+has logged in to it directly via CAS.
     
+```javascript
     var serviceURL = 'http://service.example.com/get/my/data';
     cas.getProxyTicket(req, serviceURL, function(err, ticket) {
       if (!err) {
@@ -152,7 +165,7 @@ has logged to it directly via CAS.
         request(serviceURL, ... ); // request the service
       }
     });
-
+```
 
 ## License
 

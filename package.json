@@ -1,0 +1,23 @@
+{
+  "name": "passport-cas",
+  "version": "0.0.1",
+  "description": "CAS strategy for Passport.js authentication",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.example.com/repository"
+  },
+  "keywords": [
+    "CAS",
+    "passport"
+  ],
+  "author": "Joshua Chan",
+  "license": "MIT",
+  "dependencies": {
+    "cas": "git://github.com/joshchan/node-cas",
+    "passport-strategy": "^1.0.0"
+  }
+}

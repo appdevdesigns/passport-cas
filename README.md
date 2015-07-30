@@ -23,6 +23,8 @@ accepts a validated username (and possibly also a user profile) and calls `done`
 providing a user object.
 
 ```javascript
+    var CasStrategy = require('passport-cas2').Strategy;
+    
     passport.use(new CasStrategy({
       casURL: 'https://signin.example.com/cas'
     }, 

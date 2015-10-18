@@ -1,6 +1,6 @@
 {
   "name": "passport-cas2",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "CAS 2.0 strategy for Passport.js authentication",
   "main": "./lib/index.js",
   "scripts": {

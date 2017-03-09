@@ -1,6 +1,6 @@
 {
   "name": "passport-cas2",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "CAS 2.0 strategy for Passport.js authentication",
   "main": "./lib/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "author": "Joshua Chan",
   "license": "MIT",
   "dependencies": {
-    "cas": "git://github.com/joshchan/node-cas",
+    "cas": "git://github.com/nitinhayaran/node-cas",
     "passport-strategy": "^1.0.0"
   }
 }

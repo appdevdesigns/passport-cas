@@ -17,7 +17,7 @@
   "author": "Joshua Chan",
   "license": "MIT",
   "dependencies": {
-    "cas": "git://github.com/nitinhayaran/node-cas",
+    "cas": "https://github.com/nitinhayaran/node-cas",
     "passport-strategy": "^1.0.0"
   }
 }
